@@ -2,7 +2,7 @@ package algorithim;
 
 // https://www.geeksforgeeks.org/remove-nodes-root-leaf-paths-length-k/
 
-public class BSTDeleteRootToLeafLengthLessThan {
+public class BTDeleteRootToLeafLengthLessThan {
     public TreeNode root = null;
 
     TreeNode bstDeleteRootToLeadLengthGreaterThan(TreeNode root, int k) {

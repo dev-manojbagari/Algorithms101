@@ -5,13 +5,13 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class BSTDeleteRootToLeafLengthLessThanTest {
+public class BTDeleteRootToLeafLengthLessThanTest {
 
-    BSTDeleteRootToLeafLengthLessThan bt;
+    BTDeleteRootToLeafLengthLessThan bt;
 
     @Before
     public void setUp() throws Exception {
-	bt = new BSTDeleteRootToLeafLengthLessThan();
+	bt = new BTDeleteRootToLeafLengthLessThan();
 
     }
 

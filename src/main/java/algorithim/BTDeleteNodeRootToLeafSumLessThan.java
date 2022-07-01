@@ -1,24 +1,27 @@
 package algorithim;
 
-// https://www.geeksforgeeks.org/remove-nodes-root-leaf-paths-length-k/
+// https://www.geeksforgeeks.org/remove-all-nodes-which-lie-on-a-path-having-sum-less-than-k/
 
 public class BTDeleteNodeRootToLeafSumLessThan {
     public TreeNode root = null;
 
-    TreeNode bstDeleteRootToLeadLengthGreaterThan(TreeNode root, int k) {
+    public TreeNode bstDeleteNodeRootToLeadPathSumLessThan(TreeNode root, int sum) {
 
 	if (root == null)
 	    return null;
 
-	root.left = bstDeleteRootToLeadLengthGreaterThan(root.left, k - 1);
-	root.right = bstDeleteRootToLeadLengthGreaterThan(root.right, k - 1);
+	root.left = bstDeleteNodeRootToLeadPathSumLessThan(root.left, sum - root.value);
+	root.right = bstDeleteNodeRootToLeadPathSumLessThan(root.right, sum - root.value);
 
 	if (root.left == null && root.right == null) {
-	    if (k > 1)
+
+	    if (sum - root.value > 0)
 		return null;
+
 	}
 
 	return root;
+
     }
 
 }
