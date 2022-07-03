@@ -1,4 +1,4 @@
-package algorithim;
+package algorithim.tree;
 
 import static org.junit.Assert.*;
 

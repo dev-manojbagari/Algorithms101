@@ -1,12 +1,10 @@
-package algorithim;
+package algorithim.tree;
 
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import algorithim.BSTInsert;
 
 public class BSTDeleteTest {
 

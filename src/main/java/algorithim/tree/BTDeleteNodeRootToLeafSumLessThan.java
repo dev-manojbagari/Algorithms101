@@ -1,4 +1,4 @@
-package algorithim;
+package algorithim.tree;
 
 // https://www.geeksforgeeks.org/remove-all-nodes-which-lie-on-a-path-having-sum-less-than-k/
 

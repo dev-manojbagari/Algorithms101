@@ -1,4 +1,4 @@
-package algorithim;
+package algorithim.tree;
 
 public class BSTInsert {
 	public TreeNode root = null;

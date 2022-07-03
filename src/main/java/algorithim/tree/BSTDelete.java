@@ -1,4 +1,4 @@
-package algorithim;
+package algorithim.tree;
 
 public class BSTDelete {
 	public TreeNode root = null;

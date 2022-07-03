@@ -1,4 +1,4 @@
-package algorithim;
+package algorithim.tree;
 
 import java.util.OptionalInt;
 
