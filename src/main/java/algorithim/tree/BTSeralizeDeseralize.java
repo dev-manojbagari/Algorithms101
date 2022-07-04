@@ -33,7 +33,7 @@ public class BTSeralizeDeseralize {
 
     public TreeNode deSeralize(String str) {
 
-	if (str.length() == 0)
+	if (str == null || str.length() == 0)
 	    return null;
 
 	Queue<String> nodes = new LinkedList<>(Arrays.asList(str.split(",")));
@@ -44,7 +44,7 @@ public class BTSeralizeDeseralize {
     private TreeNode deSeralize(Queue<String> nodes) {
 	String str = nodes.poll();
 
-	if (nodes.isEmpty() || str == null || "$".equals(str))
+	if (str == null || "$".equals(str))
 	    return null;
 
 	TreeNode node = new TreeNode(Integer.valueOf(str));
