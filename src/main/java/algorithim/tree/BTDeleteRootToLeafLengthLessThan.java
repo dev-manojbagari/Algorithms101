@@ -5,13 +5,13 @@ package algorithim.tree;
 public class BTDeleteRootToLeafLengthLessThan {
     public TreeNode root = null;
 
-    TreeNode bstDeleteRootToLeadLengthGreaterThan(TreeNode root, int k) {
+    TreeNode bstDeleteRootToLeadLengthLessThan(TreeNode root, int k) {
 
 	if (root == null)
 	    return null;
 
-	root.left = bstDeleteRootToLeadLengthGreaterThan(root.left, k - 1);
-	root.right = bstDeleteRootToLeadLengthGreaterThan(root.right, k - 1);
+	root.left = bstDeleteRootToLeadLengthLessThan(root.left, k - 1);
+	root.right = bstDeleteRootToLeadLengthLessThan(root.right, k - 1);
 
 	if (root.left == null && root.right == null) {
 	    if (k > 1)
