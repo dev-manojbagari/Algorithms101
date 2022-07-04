@@ -32,7 +32,7 @@ public class BSTSeralizeDeseralize {
 
     public TreeNode deSeralize(String str) {
 
-	if (str.length() == 0)
+	if (str == null || str.length() == 0)
 	    return null;
 
 	Queue<String> nodes = new LinkedList<>(Arrays.asList(str.split(",")));
