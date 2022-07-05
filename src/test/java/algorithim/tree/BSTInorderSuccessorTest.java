@@ -37,18 +37,19 @@ public class BSTInorderSuccessorTest {
     @Test
     public void inorderSuccWithParentPointer() {
 
-	bst.root2 = bst.new CustomTreeNode(50);
-	bst.root2.left = bst.new CustomTreeNode(30);
-	bst.root2.left.left = bst.new CustomTreeNode(20);
-	bst.root2.left.right = bst.new CustomTreeNode(40);
+	bst.root2 = bst.new CustomTreeNode(4);
+	bst.root2.left = bst.new CustomTreeNode(1);
+	bst.root2.left.parent = bst.root2;
+	;
 
-	bst.root2.right = bst.new CustomTreeNode(70);
-	bst.root2.right.left = bst.new CustomTreeNode(60);
-	bst.root2.right.right = bst.new CustomTreeNode(80);
+	bst.root2.left.right = bst.new CustomTreeNode(2);
+	bst.root2.left.right.parent = bst.root2.left;
+	bst.root2.left.right.right = bst.new CustomTreeNode(3);
+	bst.root2.left.right.right.parent = bst.root2.left.right;
 
-	assertEquals(60, bst.inOrderSuccWithParentPointer(bst.root2, bst.root2).value);
-	assertEquals(80, bst.inOrderSuccWithParentPointer(bst.root2, bst.root2.right).value);
-	assertNull(bst.inOrderSuccWithParentPointer(bst.root2, bst.root2.right.right));
+	assertNull(bst.inOrderSuccWithParentPointer(bst.root2, bst.root2));
+	assertEquals(2, bst.inOrderSuccWithParentPointer(bst.root2, bst.root2.left).value);
+	assertEquals(4, bst.inOrderSuccWithParentPointer(bst.root2, bst.root2.left.right.right).value);
 
     }
 
