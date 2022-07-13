@@ -1,6 +1,6 @@
 package algorithim.tree;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 import java.util.List;
@@ -19,7 +19,7 @@ public class BSTInorderRecursiveTest {
     }
 
     @Test
-    public void bstPreorderRecursiveTest() {
+    public void bstInorderRecursiveTest() {
 	bst.root = new TreeNode(2);
 	bst.root.left = new TreeNode(1);
 
