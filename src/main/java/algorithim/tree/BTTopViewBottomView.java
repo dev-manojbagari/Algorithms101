@@ -36,34 +36,28 @@ public class BTTopViewBottomView {
 	int maxHd = Integer.MIN_VALUE;
 	while (!q.isEmpty()) {
 
-	    int levelSize = q.size();
+	    Pair temp = q.poll();
+	    TreeNode node = temp.node;
+	    int hd = temp.hd;
 
-	    while (levelSize != 0) {
+	    if (!map.containsKey(hd)) {
+		map.put(hd, node.value);
 
-		Pair temp = q.poll();
-		TreeNode node = temp.node;
-		int hd = temp.hd;
-		levelSize--;
-
-		if (!map.containsKey(hd)) {
-		    map.put(hd, node.value);
-
-		    if (minHd > hd)
-			minHd = hd;
-		    if (hd > maxHd)
-			maxHd = hd;
-
-		}
-
-		if (node.left != null)
-		    q.add(new Pair(node.left, hd - 1));
-
-		if (node.right != null)
-		    q.add(new Pair(node.right, hd + 1));
+		if (minHd > hd)
+		    minHd = hd;
+		if (hd > maxHd)
+		    maxHd = hd;
 
 	    }
 
+	    if (node.left != null)
+		q.add(new Pair(node.left, hd - 1));
+
+	    if (node.right != null)
+		q.add(new Pair(node.right, hd + 1));
+
 	}
+
 	for (int i = minHd; i <= maxHd; i++) {
 	    list.add(map.get(i));
 	}
@@ -87,29 +81,22 @@ public class BTTopViewBottomView {
 	int maxHd = Integer.MIN_VALUE;
 	while (!q.isEmpty()) {
 
-	    int levelSize = q.size();
+	    Pair temp = q.poll();
+	    TreeNode node = temp.node;
+	    int hd = temp.hd;
 
-	    while (levelSize != 0) {
+	    map.put(hd, node.value);
 
-		Pair temp = q.poll();
-		TreeNode node = temp.node;
-		int hd = temp.hd;
-		levelSize--;
+	    if (minHd > hd)
+		minHd = hd;
+	    if (hd > maxHd)
+		maxHd = hd;
 
-		map.put(hd, node.value);
+	    if (node.left != null)
+		q.add(new Pair(node.left, hd - 1));
 
-		if (minHd > hd)
-		    minHd = hd;
-		if (hd > maxHd)
-		    maxHd = hd;
-
-		if (node.left != null)
-		    q.add(new Pair(node.left, hd - 1));
-
-		if (node.right != null)
-		    q.add(new Pair(node.right, hd + 1));
-
-	    }
+	    if (node.right != null)
+		q.add(new Pair(node.right, hd + 1));
 
 	}
 	for (int i = minHd; i <= maxHd; i++) {
