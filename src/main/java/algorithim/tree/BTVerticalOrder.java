@@ -77,31 +77,24 @@ public class BTVerticalOrder {
 	int maxHd = Integer.MIN_VALUE;
 	while (!q.isEmpty()) {
 
-	    int levelSize = q.size();
+	    Pair temp = q.poll();
+	    TreeNode node = temp.node;
+	    int hd = temp.hd;
 
-	    while (levelSize != 0) {
+	    int sum = map.getOrDefault(hd, 0);
+	    sum = sum + node.value;
+	    map.put(hd, sum);
 
-		Pair temp = q.poll();
-		TreeNode node = temp.node;
-		int hd = temp.hd;
-		levelSize--;
+	    if (minHd > hd)
+		minHd = hd;
+	    if (hd > maxHd)
+		maxHd = hd;
 
-		int sum = map.getOrDefault(hd, 0);
-		sum = sum + node.value;
-		map.put(hd, sum);
+	    if (node.left != null)
+		q.add(new Pair(node.left, hd - 1));
 
-		if (minHd > hd)
-		    minHd = hd;
-		if (hd > maxHd)
-		    maxHd = hd;
-
-		if (node.left != null)
-		    q.add(new Pair(node.left, hd - 1));
-
-		if (node.right != null)
-		    q.add(new Pair(node.right, hd + 1));
-
-	    }
+	    if (node.right != null)
+		q.add(new Pair(node.right, hd + 1));
 
 	}
 	for (int i = minHd; i <= maxHd; i++) {
