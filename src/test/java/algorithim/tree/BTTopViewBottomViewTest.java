@@ -34,7 +34,7 @@ public class BTTopViewBottomViewTest {
     }
 
     @Test
-    public void btRighttViewTest() {
+    public void btBottomViewTest() {
 	bt.root = new TreeNode(1);
 	bt.root.left = new TreeNode(2);
 	bt.root.left.left = new TreeNode(4);
