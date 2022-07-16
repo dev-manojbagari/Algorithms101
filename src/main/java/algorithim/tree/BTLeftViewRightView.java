@@ -70,4 +70,43 @@ public class BTLeftViewRightView {
 	return list;
     }
 
+    public List<Integer> btLeftViewRecur(TreeNode root) {
+
+	List<Integer> list = new ArrayList<>();
+	btLeftView(root, list, 0);
+	return list;
+    }
+
+    private void btLeftView(TreeNode root, List<Integer> list, int level) {
+
+	if (root == null)
+	    return;
+
+	if (list.size() <= level) {
+	    list.add(root.value);
+	}
+
+	btLeftView(root.left, list, level + 1);
+	btLeftView(root.right, list, level + 1);
+    }
+
+    public List<Integer> btRightViewRecur(TreeNode root) {
+	List<Integer> list = new ArrayList<>();
+	btRightview(root, list, 0);
+	return list;
+    }
+
+    private void btRightview(TreeNode root, List<Integer> list, int level) {
+
+	if (root == null)
+	    return;
+
+	if (list.size() <= level) {
+	    list.add(root.value);
+	}
+
+	btRightview(root.right, list, level + 1);
+	btRightview(root.left, list, level + 1);
+    }
+
 }
