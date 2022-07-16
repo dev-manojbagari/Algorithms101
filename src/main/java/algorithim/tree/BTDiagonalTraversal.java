@@ -38,7 +38,6 @@ public class BTDiagonalTraversal {
 
     public List<List<Integer>> diagonaleTraversalIter(TreeNode root) {
 
-	Map<Integer, List<Integer>> map = new HashMap<>();
 	List<Integer> list = new ArrayList<>();
 	List<List<Integer>> sol = new ArrayList<>();
 
@@ -51,7 +50,7 @@ public class BTDiagonalTraversal {
 	    TreeNode node = q.poll();
 
 	    if (node == null) {
-		map.put(dl, list);
+		sol.add(dl, list);
 		list = new ArrayList<>();
 		dl++;
 		if (q.isEmpty())
@@ -71,10 +70,6 @@ public class BTDiagonalTraversal {
 
 	}
 
-	for (Map.Entry<Integer, List<Integer>> entry : map.entrySet()) {
-	    List<Integer> val = entry.getValue();
-	    sol.add(val);
-	}
 	return sol;
     }
 
