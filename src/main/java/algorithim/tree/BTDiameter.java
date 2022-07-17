@@ -3,6 +3,7 @@ package algorithim.tree;
 public class BTDiameter {
     public TreeNode root = null;
 
+    // O(n^2)
     public int diameter(TreeNode root) {
 	if (root == null)
 	    return 0;
@@ -27,6 +28,7 @@ public class BTDiameter {
 	int h;
     }
 
+    // O(n)
     public int diameter2(TreeNode root) {
 
 	return diameter2(root, new Height());
