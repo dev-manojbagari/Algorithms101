@@ -3,29 +3,25 @@ package algorithim.tree;
 import java.util.OptionalInt;
 
 public class MaxBT {
-	public TreeNode root = null;
+    public TreeNode root = null;
 
-	OptionalInt maxBT(TreeNode root) {
+    public OptionalInt maxBT(TreeNode root) {
+	if (root == null)
+	    return OptionalInt.empty();
 
-		if (root == null)
-			return OptionalInt.empty();
+	int[] max = { Integer.MIN_VALUE };
+	maxBT(root, max);
+	return OptionalInt.of(max[0]);
+    }
 
-		return OptionalInt.of(maxBTRecursive(root));
-	}
+    private void maxBT(TreeNode root, int[] max) {
 
-	int maxBTRecursive(TreeNode root) {
+	if (root == null)
+	    return;
 
-		if (root.left == null && root.right == null)
-			return root.value;
+	max[0] = Math.max(root.value, max[0]);
 
-		if (root.left == null || root.right == null) {
-			if (root.left != null)
-				return Math.max(root.value, maxBTRecursive(root.left));
-			else
-				return Math.max(root.value, maxBTRecursive(root.right));
-
-		}
-
-		return Math.max(root.value, Math.max(maxBTRecursive(root.left), maxBTRecursive(root.right)));
-	}
+	maxBT(root.left, max);
+	maxBT(root.right, max);
+    }
 }
