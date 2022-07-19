@@ -8,13 +8,17 @@ import java.util.Queue;
 public class BTLeetCodeArrayFormatToBT {
     public TreeNode root = null;
 
-    public static TreeNode convert(String arr) {
+    public static TreeNode leetcodeConvert(String arr) {
+
+	// String regex = "^\\s+";
+
+//	arr = arr.replaceAll(regex, "");
 
 	String[] strArray = arr.split(",");
 
 	Queue<TreeNode> q = new LinkedList<>();
 
-	TreeNode root = new TreeNode(Integer.parseInt(strArray[0]));
+	TreeNode root = new TreeNode(Integer.parseInt(strArray[0].trim()));
 
 	q.add(root);
 	int i = 1;
@@ -25,7 +29,7 @@ public class BTLeetCodeArrayFormatToBT {
 	    TreeNode curRoot = q.poll();
 	    if (curRoot != null) {
 		if (!strArray[i].equals("null")) {
-		    node = new TreeNode(Integer.parseInt(strArray[i]));
+		    node = new TreeNode(Integer.parseInt(strArray[i].trim()));
 		} else
 		    node = null;
 
@@ -38,7 +42,7 @@ public class BTLeetCodeArrayFormatToBT {
 		q.add(node);
 
 		if (!strArray[i].equals("null")) {
-		    node = new TreeNode(Integer.parseInt(strArray[i]));
+		    node = new TreeNode(Integer.parseInt(strArray[i].trim()));
 		} else
 		    node = null;
 		i++;
@@ -49,6 +53,19 @@ public class BTLeetCodeArrayFormatToBT {
 	}
 
 	return root;
+    }
+
+    public static TreeNode codeNinjaConvert(String str) {
+
+	String[] split = str.split(" ");
+	StringBuilder sb = new StringBuilder();
+	for (int i = 0; i < split.length; i++) {
+	    if ("-1".equals(split[i]))
+		split[i] = "null";
+	    sb.append(split[i]).append(",");
+	}
+
+	return leetcodeConvert(sb.toString());
     }
 
     public static List<Integer> toString(TreeNode root) {
@@ -84,5 +101,17 @@ public class BTLeetCodeArrayFormatToBT {
 	return list;
     }
 
+    public static String converToLeetCodeCompatible(String str) {
+
+	String[] split = str.split(" ");
+	StringBuilder sb = new StringBuilder();
+	for (int i = 0; i < split.length; i++) {
+	    if ("-1".equals(split[i]))
+		split[i] = "null";
+	    sb.append(split[i]).append(",");
+	}
+
+	return sb.toString();
+    }
 
 }

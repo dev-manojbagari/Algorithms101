@@ -57,17 +57,17 @@ public class BTLargestBSTSumTest {
     @Test
     public void test4() {
 	String str = "9,2,3,null,2,null,null,3,null,-5,4,null,1,null,10";
-	
-	bt.root = BTLeetCodeArrayFormatToBT.convert(str);
+
+	bt.root = BTLeetCodeArrayFormatToBT.leetcodeConvert(str);
 	assertEquals(14, bt.maxSumBST(bt.root));
 
     }
-    
+
     @Test
     public void test5() {
 	String str = "0,2,9,null,null,8,1,-1,null,null,4,-5,2,null,1,null,-3,1,3,3,0";
-	
-	bt.root = BTLeetCodeArrayFormatToBT.convert(str);
+
+	bt.root = BTLeetCodeArrayFormatToBT.leetcodeConvert(str);
 	assertEquals(6, bt.maxSumBST(bt.root));
 
     }
