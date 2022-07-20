@@ -51,4 +51,27 @@ public class BTDiameter {
 	return Math.max(2 + lh.h + rh.h, Math.max(ld, rd));
     }
 
+// o(n) but faster 
+    public int diameter3(TreeNode root) {
+	if (root == null)
+	    return 0;
+
+	int[] m = { Integer.MIN_VALUE };
+	Height(root, m);
+	return m[0];
+    }
+
+    int Height(TreeNode root, int[] m) {
+	if (root == null)
+	    return -1;
+
+	int l = Height(root.left, m);
+	int r = Height(root.right, m);
+
+	m[0] = Math.max(m[0], 2 + l + r);
+
+	return 1 + Math.max(l, r);
+
+    }
+
 }
