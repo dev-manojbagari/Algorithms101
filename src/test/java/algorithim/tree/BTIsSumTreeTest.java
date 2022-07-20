@@ -43,4 +43,13 @@ public class BTIsSumTreeTest {
 	assertTrue(bt.isSumTree(bt.root));
     }
 
+    @Test
+    public void test3() {
+	String str = "3 -1 1 2 -1 -1 -1";
+
+	bt.root = BTLeetCodeArrayFormatToBT.codeNinjaConvert(str);
+
+	assertFalse(bt.isSumTree(bt.root));
+    }
+
 }

@@ -3,8 +3,8 @@ package algorithim.tree;
 public class BTIsSumTree {
     public TreeNode root = null;
 
-    private class Sum {
-	int s;
+    private class Tree {
+	int sum;
     }
 
     // O(n)
@@ -12,29 +12,29 @@ public class BTIsSumTree {
 	if (root == null)
 	    return true;
 
-	return isSumTree(root, new Sum());
+	return isSumTree(root, new Tree());
 
     }
 
-    public boolean isSumTree(TreeNode root, Sum sum) {
+    public boolean isSumTree(TreeNode root, Tree sum) {
 	if (root == null)
 	    return true;
 
-	Sum ls = new Sum();
-	Sum rs = new Sum();
+	Tree lst = new Tree();
+	Tree rst = new Tree();
 
-	boolean l = isSumTree(root.left, ls);
+	boolean l = isSumTree(root.left, lst);
 	if (!l)
 	    return false;
 
-	boolean r = isSumTree(root.right, rs);
+	boolean r = isSumTree(root.right, rst);
 	if (!r)
 	    return false;
 
-	sum.s = root.val + ls.s + rs.s;
+	sum.sum = root.val + lst.sum + rst.sum;
 
-	if (root.left != null && root.right != null)
-	    if (root.val != ls.s + rs.s)
+	if (root.left != null || root.right != null)
+	    if (root.val != lst.sum + rst.sum)
 		return false;
 
 	return l && r;
