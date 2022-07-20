@@ -29,9 +29,9 @@ public class BSTDeleteInsideRangeTest {
 
 	bst.root = bst.bstDeleteInsideRange(bst.root, 20, 50);
 
-	assertEquals(70, bst.root.value);
-	assertEquals(60, bst.root.left.value);
-	assertEquals(80, bst.root.right.value);
+	assertEquals(70, bst.root.val);
+	assertEquals(60, bst.root.left.val);
+	assertEquals(80, bst.root.right.val);
     }
 
 }

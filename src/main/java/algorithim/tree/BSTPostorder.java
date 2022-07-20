@@ -23,7 +23,7 @@ public class BSTPostorder {
 
 	postOrderRecusive(root.left, list);
 	postOrderRecusive(root.right, list);
-	list.add(root.value);
+	list.add(root.val);
 
     }
 
@@ -53,7 +53,7 @@ public class BSTPostorder {
 
 	while (!s2.isEmpty()) {
 	    TreeNode temp = s2.pop();
-	    list.add(temp.value);
+	    list.add(temp.val);
 	}
 
 	return list;

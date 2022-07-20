@@ -29,7 +29,7 @@ public class BTDeleteRootToLeafLengthLessThanTest {
 	bt.root.right.right.left = new TreeNode(8);
 	bt.bstDeleteRootToLeadLengthLessThan(bt.root, 4);
 	assertNull(bt.root.left.right);
-	assertEquals(bt.root.right.right.left.value, 8);
+	assertEquals(bt.root.right.right.left.val, 8);
 
     }
 

@@ -25,7 +25,7 @@ public class BTNextRight {
 		TreeNode temp = q.poll();
 		levelSize--;
 
-		if (temp.value == k)
+		if (temp.val == k)
 		    return next;
 
 		next = temp;

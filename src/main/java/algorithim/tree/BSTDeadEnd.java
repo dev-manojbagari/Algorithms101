@@ -16,8 +16,8 @@ public class BSTDeadEnd {
 	if (root == null)
 	    return false;
 
-	boolean l = deadEnd(root.left, min, root.value - 1);
-	boolean r = deadEnd(root.right, root.value + 1, max);
+	boolean l = deadEnd(root.left, min, root.val - 1);
+	boolean r = deadEnd(root.right, root.val + 1, max);
 
 	if (min == max)
 	    return true;

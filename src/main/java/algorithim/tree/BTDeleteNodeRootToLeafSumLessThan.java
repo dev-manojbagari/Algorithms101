@@ -10,12 +10,12 @@ public class BTDeleteNodeRootToLeafSumLessThan {
 	if (root == null)
 	    return null;
 
-	root.left = bstDeleteNodeRootToLeadPathSumLessThan(root.left, sum - root.value);
-	root.right = bstDeleteNodeRootToLeadPathSumLessThan(root.right, sum - root.value);
+	root.left = bstDeleteNodeRootToLeadPathSumLessThan(root.left, sum - root.val);
+	root.right = bstDeleteNodeRootToLeadPathSumLessThan(root.right, sum - root.val);
 
 	if (root.left == null && root.right == null) {
 
-	    if (sum - root.value > 0)
+	    if (sum - root.val > 0)
 		return null;
 
 	}

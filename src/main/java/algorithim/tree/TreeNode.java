@@ -1,11 +1,11 @@
 package algorithim.tree;
 public class TreeNode {
 
-		int value;
+		int val;
 		TreeNode left;
 		TreeNode right;
 
 		TreeNode(int data) {
-			this.value = data;
+			this.val = data;
 		}
 	}

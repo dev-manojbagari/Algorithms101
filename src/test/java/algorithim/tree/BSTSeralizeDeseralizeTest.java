@@ -26,9 +26,9 @@ public class BSTSeralizeDeseralizeTest {
 
 	bst.root = bst.deSeralize(bst.seralize(bst.root));
 
-	assertEquals(bst.root.value, 3);
-	assertEquals(bst.root.left.value, 2);
-	assertEquals(bst.root.right.value, 5);
+	assertEquals(bst.root.val, 3);
+	assertEquals(bst.root.left.val, 2);
+	assertEquals(bst.root.right.val, 5);
 
     }
 
@@ -56,9 +56,9 @@ public class BSTSeralizeDeseralizeTest {
 
 	bst.root = bst.deSeralize(str);
 
-	assertEquals(bst.root.value, 3);
-	assertEquals(bst.root.left.value, 2);
-	assertEquals(bst.root.right.value, 5);
+	assertEquals(bst.root.val, 3);
+	assertEquals(bst.root.left.val, 2);
+	assertEquals(bst.root.right.val, 5);
 
     }
 

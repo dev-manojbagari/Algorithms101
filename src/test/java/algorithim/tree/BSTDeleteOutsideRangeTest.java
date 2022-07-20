@@ -30,10 +30,10 @@ public class BSTDeleteOutsideRangeTest {
 		bst.bstDeleteOutsideRange(bst.root, -10, 13);
 		
 		
-		assertEquals(6, bst.root.value);
-		assertEquals(-8, bst.root.left.value);
-		assertEquals(13, bst.root.right.value);
-		assertEquals(7, bst.root.right.left.value);
+		assertEquals(6, bst.root.val);
+		assertEquals(-8, bst.root.left.val);
+		assertEquals(13, bst.root.right.val);
+		assertEquals(7, bst.root.right.left.val);
 		assertNull(bst.root.right.right);
 	}
 

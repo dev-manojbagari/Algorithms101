@@ -20,7 +20,7 @@ public class BTLeftViewRightView {
 
 	    int levelSize = q.size();
 
-	    list.add(q.peek().value);
+	    list.add(q.peek().val);
 	    while (levelSize != 0) {
 
 		TreeNode temp = q.poll();
@@ -51,7 +51,7 @@ public class BTLeftViewRightView {
 
 	    int levelSize = q.size();
 
-	    list.add(q.peek().value);
+	    list.add(q.peek().val);
 	    while (levelSize != 0) {
 
 		TreeNode temp = q.poll();
@@ -83,7 +83,7 @@ public class BTLeftViewRightView {
 	    return;
 
 	if (list.size() <= level) {
-	    list.add(root.value);
+	    list.add(root.val);
 	}
 
 	btLeftView(root.left, list, level + 1);
@@ -102,7 +102,7 @@ public class BTLeftViewRightView {
 	    return;
 
 	if (list.size() <= level) {
-	    list.add(root.value);
+	    list.add(root.val);
 	}
 
 	btRightview(root.right, list, level + 1);

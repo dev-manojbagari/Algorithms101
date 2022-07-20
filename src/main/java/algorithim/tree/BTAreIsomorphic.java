@@ -12,7 +12,7 @@ public class BTAreIsomorphic {
 	if (root1 == null || root2 == null)
 	    return false;
 
-	if (root1.value != root2.value)
+	if (root1.val != root2.val)
 	    return false;
 
 	return areIsomorphic(root1.left, root2.left) && areIsomorphic(root1.right, root2.right)

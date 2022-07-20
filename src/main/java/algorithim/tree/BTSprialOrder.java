@@ -26,9 +26,9 @@ public class BTSprialOrder {
 		TreeNode temp = q.poll();
 		levelSize--;
 		if (level % 2 == 0)
-		    curLvlList.addFirst(temp.value);
+		    curLvlList.addFirst(temp.val);
 		else
-		    curLvlList.add(temp.value);
+		    curLvlList.add(temp.val);
 
 		if (temp.left != null)
 		    q.add(temp.left);
@@ -60,9 +60,9 @@ public class BTSprialOrder {
 
 	List<Integer> collection = sol.get(level);
 	if (level % 2 == 0)
-	    collection.add(0, curr.value);
+	    collection.add(0, curr.val);
 	else
-	    collection.add(curr.value);
+	    collection.add(curr.val);
 
 	travel(curr.left, sol, level + 1);
 	travel(curr.right, sol, level + 1);

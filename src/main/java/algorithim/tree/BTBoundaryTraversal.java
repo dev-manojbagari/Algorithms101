@@ -11,7 +11,7 @@ public class BTBoundaryTraversal {
 
 	List<Integer> list = new ArrayList<>();
 
-	list.add(root.value);
+	list.add(root.val);
 	leftBoundary(root.left, list);
 	leafNodes(root, list);
 	rightBoundary(root.right, list);
@@ -25,7 +25,7 @@ public class BTBoundaryTraversal {
 
 	while (root != null) {
 	    if (root.left != null || root.right != null)
-		stack.add(root.value);
+		stack.add(root.val);
 
 	    if (root.right != null)
 		root = root.right;
@@ -47,14 +47,14 @@ public class BTBoundaryTraversal {
 	leafNodes(root.right, list);
 
 	if (root.left == null && root.right == null)
-	    list.add(root.value);
+	    list.add(root.val);
 
     }
 
     private void leftBoundary(TreeNode root, List<Integer> list) {
 	while (root != null) {
 	    if (root.left != null || root.right != null)
-		list.add(root.value);
+		list.add(root.val);
 
 	    if (root.left != null)
 		root = root.left;

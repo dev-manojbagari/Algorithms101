@@ -23,7 +23,7 @@ public class BSTSeralizeDeseralize {
 	if (root == null)
 	    return;
 
-	sb.append(root.value).append(",");
+	sb.append(root.val).append(",");
 
 	seralize(root.left, sb);
 	seralize(root.right, sb);

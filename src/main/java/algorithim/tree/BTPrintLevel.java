@@ -25,7 +25,7 @@ public class BTPrintLevel {
 	    return;
 
 	if (level == k)
-	    list.add(root.value);
+	    list.add(root.val);
 
 	printLevelRecusive(root.left, list, k, level + 1);
 	printLevelRecusive(root.right, list, k, level + 1);
@@ -50,7 +50,7 @@ public class BTPrintLevel {
 		levelSize--;
 
 		if (curLevel == i)
-		    list.add(node.value);
+		    list.add(node.val);
 
 		if (node.left != null)
 		    q.add(node.left);

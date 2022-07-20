@@ -24,7 +24,7 @@ public class BTSeralizeDeseralize {
 	    sb.append("$").append(",");
 	    return;
 	}
-	sb.append(root.value).append(",");
+	sb.append(root.val).append(",");
 
 	seralize(root.left, sb);
 	seralize(root.right, sb);

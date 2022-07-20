@@ -19,7 +19,7 @@ public class MaxBT {
 	if (root == null)
 	    return;
 
-	max[0] = Math.max(root.value, max[0]);
+	max[0] = Math.max(root.val, max[0]);
 
 	maxBT(root.left, max);
 	maxBT(root.right, max);

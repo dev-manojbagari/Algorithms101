@@ -25,7 +25,7 @@ public class BTLevelorderIter {
 		TreeNode temp = q.poll();
 		levelSize--;
 
-		list.add(temp.value);
+		list.add(temp.val);
 
 		if (temp.left != null)
 		    q.add(temp.left);

@@ -23,7 +23,7 @@ public class IsBST {
 
 	    curr = stack.pop();
 
-	    if (prev != null && prev.value > curr.value)
+	    if (prev != null && prev.val > curr.val)
 		return false;
 
 	    prev = curr;
@@ -45,11 +45,11 @@ public class IsBST {
 	if (root == null)
 	    return true;
 
-	if (min > root.value || root.value > max)
+	if (min > root.val || root.val > max)
 	    return false;
 
-	boolean l = isBSTRecursive(root.left, min, root.value);
-	boolean r = isBSTRecursive(root.right, root.value, max);
+	boolean l = isBSTRecursive(root.left, min, root.val);
+	boolean r = isBSTRecursive(root.right, root.val, max);
 
 	return l && r;
     }

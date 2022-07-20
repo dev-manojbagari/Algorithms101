@@ -31,19 +31,19 @@ public class BSTDeleteTest {
 		
 		
 		//zero child node
-		assertEquals(14, bst.root.right.right.value);
+		assertEquals(14, bst.root.right.right.val);
 		bst.deleteIterative(bst.root, 14);
 		assertNull(bst.root.right.right);
 		
 		//one child node
-		assertEquals(12, bst.root.right.value);
+		assertEquals(12, bst.root.right.val);
 		bst.deleteIterative(bst.root, 12);
-		assertEquals(10, bst.root.right.value);;
+		assertEquals(10, bst.root.right.val);;
 		
 		//two child node
-		assertEquals(8, bst.root.value);
+		assertEquals(8, bst.root.val);
 		bst.deleteIterative(bst.root, 8);
-		assertEquals(10, bst.root.value);;
+		assertEquals(10, bst.root.val);;
 		
 		bst.root=null;
 
@@ -66,19 +66,19 @@ public class BSTDeleteTest {
 		
 		
 		//zero child node
-		assertEquals(14, bst.root.right.right.value);
+		assertEquals(14, bst.root.right.right.val);
 		bst.deleteRecursive(bst.root, 14);
 		assertNull(bst.root.right.right);
 		
 		//one child node
-		assertEquals(12, bst.root.right.value);
+		assertEquals(12, bst.root.right.val);
 		bst.deleteRecursive(bst.root, 12);
-		assertEquals(10, bst.root.right.value);;
+		assertEquals(10, bst.root.right.val);;
 		
 		//two child node
-		assertEquals(8, bst.root.value);
+		assertEquals(8, bst.root.val);
 		bst.deleteRecursive(bst.root, 8);
-		assertEquals(10, bst.root.value);;
+		assertEquals(10, bst.root.val);;
 		
 		bst.root=null;
 	}

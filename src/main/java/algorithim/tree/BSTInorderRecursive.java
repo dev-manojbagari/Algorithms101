@@ -22,7 +22,7 @@ public class BSTInorderRecursive {
 	    return;
 
 	inOrder(root.left, list);
-	list.add(root.value);
+	list.add(root.val);
 	inOrder(root.right, list);
 
     }

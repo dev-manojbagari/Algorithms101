@@ -23,7 +23,7 @@ public class BSTPreorderInOrderNoStackNoRecursion {
 
 	while (curr != null) {
 	    if (curr.left == null) {
-		list.add(curr.value);
+		list.add(curr.val);
 		curr = curr.right;
 	    } else {
 
@@ -35,7 +35,7 @@ public class BSTPreorderInOrderNoStackNoRecursion {
 
 		if (temp.right == null) {
 		    temp.right = curr;
-		    list.add(curr.value);
+		    list.add(curr.val);
 		    curr = curr.left;
 		} else {
 		    temp.right = null;
@@ -64,7 +64,7 @@ public class BSTPreorderInOrderNoStackNoRecursion {
 
 	while (curr != null) {
 	    if (curr.left == null) {
-		list.add(curr.value);
+		list.add(curr.val);
 		curr = curr.right;
 	    } else {
 
@@ -79,7 +79,7 @@ public class BSTPreorderInOrderNoStackNoRecursion {
 		    curr = curr.left;
 		} else {
 		    temp.right = null;
-		    list.add(curr.value);
+		    list.add(curr.val);
 		    curr = curr.right;
 		}
 

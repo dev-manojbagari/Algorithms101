@@ -20,7 +20,7 @@ public class BSTPreorderRecursive {
 	if (root == null)
 	    return;
 
-	list.add(root.value);
+	list.add(root.val);
 
 	preOrder(root.left, list);
 	preOrder(root.right, list);

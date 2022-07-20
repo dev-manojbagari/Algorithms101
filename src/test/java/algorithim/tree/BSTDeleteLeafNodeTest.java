@@ -34,8 +34,8 @@ public class BSTDeleteLeafNodeTest {
 	assertNull(bst.root.right.left);
 	assertNull(bst.root.right.right);
 
-	assertEquals(bst.root.left.value, 10);
-	assertEquals(bst.root.right.value, 30);
+	assertEquals(bst.root.left.val, 10);
+	assertEquals(bst.root.right.val, 30);
 
     }
 

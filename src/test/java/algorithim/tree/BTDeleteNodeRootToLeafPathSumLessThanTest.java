@@ -62,12 +62,12 @@ public class BTDeleteNodeRootToLeafPathSumLessThanTest {
 	
 	bt.bstDeleteNodeRootToLeadPathSumLessThan(bt.root, 45);
 
-        assertEquals(bt.root.value, 1);
-        assertEquals(bt.root.left.value, 2);
-        assertEquals(bt.root.left.left.value, 4);
-        assertEquals(bt.root.left.left.right.value, 9);
-        assertEquals(bt.root.left.left.right.right.value, 14);
-        assertEquals(bt.root.left.left.right.right.left.value, 15);
+        assertEquals(bt.root.val, 1);
+        assertEquals(bt.root.left.val, 2);
+        assertEquals(bt.root.left.left.val, 4);
+        assertEquals(bt.root.left.left.right.val, 9);
+        assertEquals(bt.root.left.left.right.right.val, 14);
+        assertEquals(bt.root.left.left.right.right.left.val, 15);
         
         assertNull(bt.root.right);
         assertNull(bt.root.left.right);

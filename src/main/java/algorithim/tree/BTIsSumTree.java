@@ -31,10 +31,10 @@ public class BTIsSumTree {
 	if (!r)
 	    return false;
 
-	sum.s = root.value + ls.s + rs.s;
+	sum.s = root.val + ls.s + rs.s;
 
 	if (root.left != null && root.right != null)
-	    if (root.value != ls.s + rs.s)
+	    if (root.val != ls.s + rs.s)
 		return false;
 
 	return l && r;

@@ -14,6 +14,6 @@ public class MaxBST {
 		while (root.right != null)
 			root = root.right;
 
-		return  OptionalInt.of(root.value);
+		return  OptionalInt.of(root.val);
 	}
 }

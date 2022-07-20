@@ -31,14 +31,14 @@ public class BTLargestBSTSum {
 
 	maxSumBST(root.left, lst);
 	maxSumBST(root.right, rst);
-	if (lst.isBST == true && rst.isBST == true && lst.max < root.value && root.value < rst.min) {
+	if (lst.isBST == true && rst.isBST == true && lst.max < root.val && root.val < rst.min) {
 	    tree.isBST = true;
 
-	    tree.sum = lst.sum + root.value + rst.sum;
+	    tree.sum = lst.sum + root.val + rst.sum;
 	    tree.maxSum = Math.max(Math.max(lst.maxSum, rst.maxSum), tree.sum);
 
-	    tree.min = root.left != null ? lst.min : root.value;
-	    tree.max = root.right != null ? rst.max : root.value;
+	    tree.min = root.left != null ? lst.min : root.val;
+	    tree.max = root.right != null ? rst.max : root.val;
 	    return;
 	}
 

@@ -30,7 +30,7 @@ public class BTMaxSumNonAdjacent {
 	maxSumNonAdj(root.left, left);
 	maxSumNonAdj(root.right, right);
 
-	pair.incl = root.value + left.excl + right.excl;
+	pair.incl = root.val + left.excl + right.excl;
 	pair.excl = Math.max(left.incl, left.excl) + Math.max(right.incl, right.excl);
 
     }

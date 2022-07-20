@@ -26,7 +26,7 @@ public class BSTInorderIterative {
 	    }
 
 	    curr = stack.pop();
-	    list.add(curr.value);
+	    list.add(curr.val);
 	    curr = curr.right;
 
 	}

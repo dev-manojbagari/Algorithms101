@@ -31,7 +31,7 @@ public class BSTInorderSuccessor {
 	    TreeNode parent = null;
 
 	    while (curr != node) {
-		if (curr.value < node.value) {
+		if (curr.val < node.val) {
 		    parent = curr;
 		    curr = curr.left;
 		} else {

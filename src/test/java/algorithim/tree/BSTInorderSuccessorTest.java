@@ -28,8 +28,8 @@ public class BSTInorderSuccessorTest {
 	bst.root.right.left = new TreeNode(60);
 	bst.root.right.right = new TreeNode(80);
 
-	assertEquals(60, bst.inOrderSuccNoParentPointer(bst.root, bst.root).value);
-	assertEquals(80, bst.inOrderSuccNoParentPointer(bst.root, bst.root.right).value);
+	assertEquals(60, bst.inOrderSuccNoParentPointer(bst.root, bst.root).val);
+	assertEquals(80, bst.inOrderSuccNoParentPointer(bst.root, bst.root.right).val);
 	assertNull(bst.inOrderSuccNoParentPointer(bst.root, bst.root.right.right));
 
     }

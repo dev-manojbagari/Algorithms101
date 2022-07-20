@@ -27,7 +27,7 @@ public class BSTPreorderIterative {
 	while (!stack.isEmpty()) {
 
 	    TreeNode curr = stack.pop();
-	    list.add(curr.value);
+	    list.add(curr.val);
 
 	    if (curr.right != null)
 		stack.add(curr.right);

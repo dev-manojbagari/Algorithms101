@@ -12,7 +12,7 @@ public class BSTDeleteInsideRange {
 	root.left = bstDeleteInsideRange(root.left, min, max);
 	root.right = bstDeleteInsideRange(root.right, min, max);
 
-	if (min <= root.value && root.value <= max) {
+	if (min <= root.val && root.val <= max) {
 
 	    return bstDelete(root);
 	}
@@ -26,7 +26,7 @@ public class BSTDeleteInsideRange {
 	    return null;
 	} else if (node.left != null && node.right != null) {
 	    int minRight = minRight(node.right);
-	    node.value = minRight;
+	    node.val = minRight;
 
 	    if (node.right.left == null)
 		node.right = node.right.right;
@@ -57,7 +57,7 @@ public class BSTDeleteInsideRange {
 	while (node.left != null)
 	    node = node.left;
 
-	return node.value;
+	return node.val;
     }
 
 }

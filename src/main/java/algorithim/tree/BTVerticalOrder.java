@@ -40,7 +40,7 @@ public class BTVerticalOrder {
 	    int hd = temp.hd;
 
 	    List<Integer> tempList = map.getOrDefault(hd, new ArrayList<Integer>());
-	    tempList.add(node.value);
+	    tempList.add(node.val);
 	    map.put(hd, tempList);
 
 	    if (minHd > hd)
@@ -82,7 +82,7 @@ public class BTVerticalOrder {
 	    int hd = temp.hd;
 
 	    int sum = map.getOrDefault(hd, 0);
-	    sum = sum + node.value;
+	    sum = sum + node.val;
 	    map.put(hd, sum);
 
 	    if (minHd > hd)

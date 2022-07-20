@@ -12,10 +12,10 @@ public class BSTDeleteOutsideRange {
 		root.left = bstDeleteOutsideRange(root.left, min, max);
 		root.right = bstDeleteOutsideRange(root.right, min, max);
 
-		if (root.value < min)
+		if (root.val < min)
 			return root.right;
 
-		if (root.value > max)
+		if (root.val > max)
 			return root.left;
 
 		return root;

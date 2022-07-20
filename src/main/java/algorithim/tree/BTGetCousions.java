@@ -27,9 +27,9 @@ public class BTGetCousions {
 		TreeNode temp = q.poll();
 		levelSize--;
 
-		if (temp.left != null && temp.left.value == i)
+		if (temp.left != null && temp.left.val == i)
 		    ifound = true;
-		else if (temp.right != null && temp.right.value == i)
+		else if (temp.right != null && temp.right.val == i)
 		    ifound = true;
 		else {
 
@@ -42,7 +42,7 @@ public class BTGetCousions {
 
 	    if (ifound) {
 		while (!q.isEmpty())
-		    list.add(q.poll().value);
+		    list.add(q.poll().val);
 		return list;
 	    }
 

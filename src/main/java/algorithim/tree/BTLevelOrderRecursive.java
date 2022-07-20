@@ -23,7 +23,7 @@ public class BTLevelOrderRecursive {
 	}
 
 	List<Integer> collection = sol.get(level);
-	collection.add(curr.value);
+	collection.add(curr.val);
 
 	levelOrderRecursive(curr.left, sol, level + 1);
 	levelOrderRecursive(curr.right, sol, level + 1);

@@ -25,9 +25,9 @@ public class BTMaxPathSum {
 	if (r < 0)
 	    r = 0;
 
-	maxSum[0] = Math.max(maxSum[0], root.value + l + r);
+	maxSum[0] = Math.max(maxSum[0], root.val + l + r);
 
-	return root.value + Math.max(l, r);
+	return root.val + Math.max(l, r);
     }
 
 }

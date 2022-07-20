@@ -32,11 +32,11 @@ public class BTLargestBST {
 	largestBST(root.right, rsb);
 
 	if (lsb.isBST == true && rsb.isBST == true) {
-	    if (lsb.max < root.value && root.value < rsb.min) {
+	    if (lsb.max < root.val && root.val < rsb.min) {
 		tree.isBST = true;
 		tree.size = 1 + lsb.size + rsb.size;
-		tree.min = Math.min(root.value, lsb.min);
-		tree.max = Math.max(root.value, rsb.max);
+		tree.min = Math.min(root.val, lsb.min);
+		tree.max = Math.max(root.val, rsb.max);
 		return;
 
 	    }

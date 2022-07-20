@@ -25,14 +25,14 @@ public class BTCousionsCheck {
 		TreeNode temp = q.poll();
 		levelSize--;
 
-		if (temp.value == i)
+		if (temp.val == i)
 		    ifound = true;
 
-		if (temp.value == j)
+		if (temp.val == j)
 		    jfound = true;
 
 		if (temp.left != null && temp.right != null) {
-		    if (temp.left.value == i && temp.right.value == j || temp.left.value == j && temp.right.value == i)
+		    if (temp.left.val == i && temp.right.val == j || temp.left.val == j && temp.right.val == i)
 			return false;
 		}
 

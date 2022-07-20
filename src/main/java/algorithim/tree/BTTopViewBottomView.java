@@ -41,7 +41,7 @@ public class BTTopViewBottomView {
 	    int hd = temp.hd;
 
 	    if (!map.containsKey(hd)) {
-		map.put(hd, node.value);
+		map.put(hd, node.val);
 
 		if (minHd > hd)
 		    minHd = hd;
@@ -85,7 +85,7 @@ public class BTTopViewBottomView {
 	    TreeNode node = temp.node;
 	    int hd = temp.hd;
 
-	    map.put(hd, node.value);
+	    map.put(hd, node.val);
 
 	    if (minHd > hd)
 		minHd = hd;

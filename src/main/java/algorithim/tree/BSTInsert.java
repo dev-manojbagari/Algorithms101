@@ -12,13 +12,13 @@ public class BSTInsert {
 
 			while (curr != null) {
 				parent = curr;
-				if (curr.value <= value)
+				if (curr.val <= value)
 					curr = curr.right;
 				else
 					curr = curr.left;
 			}
 
-			if (parent.value <= value)
+			if (parent.val <= value)
 				parent.right = new TreeNode(value);
 			else
 				parent.left = new TreeNode(value);
@@ -33,7 +33,7 @@ public class BSTInsert {
 
 		if (root == null)
 			return new TreeNode(value);
-		else if (root.value <= value)
+		else if (root.val <= value)
 			root.right = insertRecursive(root.right, value);
 		else
 			root.left = insertRecursive(root.left, value);

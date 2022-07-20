@@ -27,8 +27,8 @@ public class BSTKthSmallestKthLargestTest {
 	bst.root.right.left = new TreeNode(60);
 	bst.root.right.right = new TreeNode(80);
 
-	assertEquals(40, bst.bstKthSmallest(bst.root, 3).value);
-	assertEquals(80, bst.bstKthSmallest(bst.root, 7).value);
+	assertEquals(40, bst.bstKthSmallest(bst.root, 3).val);
+	assertEquals(80, bst.bstKthSmallest(bst.root, 7).val);
 	assertNull(bst.bstKthSmallest(bst.root, 8));
 
     }
@@ -45,8 +45,8 @@ public class BSTKthSmallestKthLargestTest {
 	bst.root.right.left = new TreeNode(60);
 	bst.root.right.right = new TreeNode(80);
 
-	assertEquals(60, bst.bstKthLargest(bst.root, 3).value);
-	assertEquals(20, bst.bstKthLargest(bst.root, 7).value);
+	assertEquals(60, bst.bstKthLargest(bst.root, 3).val);
+	assertEquals(20, bst.bstKthLargest(bst.root, 7).val);
 	assertNull(bst.bstKthLargest(bst.root, 8));
 
     }

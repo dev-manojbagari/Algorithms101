@@ -11,7 +11,7 @@ public class BTAreMirror {
 	if (root1 == null || root2 == null)
 	    return false;
 
-	if (root1.value != root2.value)
+	if (root1.val != root2.val)
 	    return false;
 
 	boolean l = areMirror(root1.left, root2.right);

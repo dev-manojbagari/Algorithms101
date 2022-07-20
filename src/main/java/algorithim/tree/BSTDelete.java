@@ -11,9 +11,9 @@ public class BSTDelete {
 		TreeNode curr = root;
 		TreeNode parent = null;
 
-		while (curr != null && curr.value != value) {
+		while (curr != null && curr.val != value) {
 			parent = curr;
-			if (curr.value < value) {
+			if (curr.val < value) {
 				curr = curr.right;
 			} else {
 				curr = curr.left;
@@ -38,7 +38,7 @@ public class BSTDelete {
 
 			int minRightTree = minRight(curr.right);
 
-			curr.value = minRightTree;
+			curr.val = minRightTree;
 
 			curr.right = deleteIterative(curr.right, minRightTree);
 
@@ -62,15 +62,15 @@ public class BSTDelete {
 			node = node.left;
 		}
 
-		return node.value;
+		return node.val;
 	}
 
 	public TreeNode deleteRecursive(TreeNode root, int value) {
 		if (root == null)
 			return null;
-		else if (root.value < value)
+		else if (root.val < value)
 			root.right = deleteRecursive(root.right, value);
-		else if (root.value > value)
+		else if (root.val > value)
 			root.left = deleteRecursive(root.left, value);
 		else {
 
@@ -82,7 +82,7 @@ public class BSTDelete {
 
 				int minRightTree = minRight(root.right);
 
-				root.value = minRightTree;
+				root.val = minRightTree;
 
 				root.right = deleteRecursive(root.right, minRightTree);
 

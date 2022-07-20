@@ -29,7 +29,7 @@ public class BTDiagonalTraversal {
 	    return;
 
 	List<Integer> list = map.getOrDefault(dl, new ArrayList<>());
-	list.add(root.value);
+	list.add(root.val);
 	map.put(dl, list);
 	diagonaleTraversal(root.left, map, dl + 1);
 	diagonaleTraversal(root.right, map, dl);
@@ -61,7 +61,7 @@ public class BTDiagonalTraversal {
 
 	    while (node != null) {
 
-		list.add(node.value);
+		list.add(node.val);
 		if (node.left != null)
 		    q.add(node.left);
 		node = node.right;
