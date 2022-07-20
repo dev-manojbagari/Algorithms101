@@ -5,9 +5,9 @@ public class BTLargestBST {
 
     private class Tree {
 	boolean isBST = true;
-	Integer min = Integer.MAX_VALUE;
-	Integer max = Integer.MIN_VALUE;
-	int size;
+	int min = Integer.MAX_VALUE;
+	int max = Integer.MIN_VALUE;
+	int size = 0;
     }
 
     public int largestBST(TreeNode root) {
@@ -15,34 +15,35 @@ public class BTLargestBST {
 	    return 0;
 
 	Tree tree = new Tree();
-	largestBST(root, tree);
-	return tree.size;
+	int maxSize[] = { Integer.MIN_VALUE };
+	maxBST(root, tree, maxSize);
+
+	return maxSize[0];
     }
 
-    private void largestBST(TreeNode root, Tree tree) {
+    private void maxBST(TreeNode root, Tree tree, int[] maxSize) {
 
-	if (root == null) {
+	if (root == null)
 	    return;
-	}
 
-	Tree lsb = new Tree();
-	Tree rsb = new Tree();
+	Tree lst = new Tree();
+	Tree rst = new Tree();
 
-	largestBST(root.left, lsb);
-	largestBST(root.right, rsb);
+	maxBST(root.left, lst, maxSize);
+	maxBST(root.right, rst, maxSize);
 
-	if (lsb.isBST == true && rsb.isBST == true) {
-	    if (lsb.max < root.val && root.val < rsb.min) {
-		tree.isBST = true;
-		tree.size = 1 + lsb.size + rsb.size;
-		tree.min = Math.min(root.val, lsb.min);
-		tree.max = Math.max(root.val, rsb.max);
-		return;
+	if (lst.isBST == true && rst.isBST == true && lst.max < root.val && root.val < rst.min) {
 
-	    }
-	}
-	tree.isBST = false;
-	tree.size = Math.max(lsb.size, rsb.size);
+	    tree.isBST = true;
+
+	    tree.min = root.left == null ? root.val : lst.min;
+	    tree.max = root.right == null ? root.val : rst.max;
+
+	    tree.size = 1 + lst.size + rst.size;
+	    maxSize[0] = Math.max(maxSize[0], tree.size);
+
+	} else
+	    tree.isBST = false;
 
     }
 
