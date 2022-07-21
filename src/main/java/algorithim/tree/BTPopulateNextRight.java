@@ -67,7 +67,7 @@ public class BTPopulateNextRight {
 		if (temp.left != null)
 		    temp.left.next = temp.right;
 		if (temp.right != null && temp.next != null)
-		    temp.right.next = temp.next.left;
+		    temp.right.next = temp.next.left != null ? temp.next.left : temp.next.right;
 
 		temp = temp.next;
 
