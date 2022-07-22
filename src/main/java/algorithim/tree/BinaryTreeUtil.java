@@ -5,14 +5,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class BTLeetCodeArrayFormatToBT {
+public class BinaryTreeUtil {
     public TreeNode root = null;
 
     public static TreeNode leetcodeConvert(String arr) {
-
-	// String regex = "^\\s+";
-
-//	arr = arr.replaceAll(regex, "");
 
 	String[] strArray = arr.split(",");
 
@@ -55,17 +51,21 @@ public class BTLeetCodeArrayFormatToBT {
 	return root;
     }
 
-    public static TreeNode codeNinjaConvert(String str) {
+    public static TreeNode convert(String str) {
 
-	String[] split = str.split(" ");
-	StringBuilder sb = new StringBuilder();
-	for (int i = 0; i < split.length; i++) {
-	    if ("-1".equals(split[i]))
-		split[i] = "null";
-	    sb.append(split[i]).append(",");
+	if (str.contains("-1")) {
+
+	    String[] split = str.split(" ");
+	    StringBuilder sb = new StringBuilder();
+	    for (int i = 0; i < split.length; i++) {
+		if ("-1".equals(split[i]))
+		    split[i] = "null";
+		sb.append(split[i]).append(",");
+	    }
+	    str = sb.toString();
 	}
 
-	return leetcodeConvert(sb.toString());
+	return leetcodeConvert(str);
     }
 
     public static List<Integer> toString(TreeNode root) {
