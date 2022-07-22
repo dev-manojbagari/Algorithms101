@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class BinaryTreeUtil {
+public class BTUtil {
     public TreeNode root = null;
 
     public static TreeNode leetcodeConvert(String arr) {

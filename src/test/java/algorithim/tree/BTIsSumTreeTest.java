@@ -47,7 +47,7 @@ public class BTIsSumTreeTest {
     public void test3() {
 	String str = "3 -1 1 2 -1 -1 -1";
 
-	bt.root = BinaryTreeUtil.convert(str);
+	bt.root = BTUtil.convert(str);
 
 	assertFalse(bt.isSumTree(bt.root));
     }

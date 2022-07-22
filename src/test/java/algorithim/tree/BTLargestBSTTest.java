@@ -18,7 +18,7 @@ public class BTLargestBSTTest {
     public void test() {
 
 	String str = "0,2,9,null,null,8,1,-1,null,null,4,-5,2,null,1,null,-3,1,3,3,0";
-	bt.root = BinaryTreeUtil.leetcodeConvert(str);
+	bt.root = BTUtil.leetcodeConvert(str);
 
 	assertEquals(7, bt.largestBST(bt.root));
 
@@ -28,7 +28,7 @@ public class BTLargestBSTTest {
     public void test2() {
 
 	String str = "9,2,3,null,2,null,null,3,null,-5,4,null,1,null,10";
-	bt.root = BinaryTreeUtil.leetcodeConvert(str);
+	bt.root = BTUtil.leetcodeConvert(str);
 
 	assertEquals(5, bt.largestBST(bt.root));
 

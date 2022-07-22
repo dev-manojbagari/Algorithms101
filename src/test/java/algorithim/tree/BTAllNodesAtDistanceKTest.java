@@ -20,7 +20,7 @@ public class BTAllNodesAtDistanceKTest {
     @Test
     public void test() {
 
-	bt.root = BinaryTreeUtil.convert("3 5 1 6 2 0 8 -1 -1 7 4 -1 -1 -1 -1 -1 -1 -1 -1");
+	bt.root = BTUtil.convert("3 5 1 6 2 0 8 -1 -1 7 4 -1 -1 -1 -1 -1 -1 -1 -1");
 	List<Integer> list = bt.allNodesAtDistanceK(bt.root, bt.root.left, 2);
 
 	assertTrue(list.containsAll(Arrays.asList(1, 4, 7)));
@@ -30,7 +30,7 @@ public class BTAllNodesAtDistanceKTest {
     @Test
     public void test2() {
 
-	bt.root = BinaryTreeUtil.convert("1 2 3 4 5 -1 -1 6 -1 -1 -1 -1 -1");
+	bt.root = BTUtil.convert("1 2 3 4 5 -1 -1 6 -1 -1 -1 -1 -1");
 	List<Integer> list = bt.allNodesAtDistanceK(bt.root, bt.root.left.right, 3);
 
 	assertTrue(list.containsAll(Arrays.asList(3, 6)));
