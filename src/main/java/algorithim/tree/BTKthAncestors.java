@@ -3,21 +3,22 @@ package algorithim.tree;
 public class BTKthAncestors {
     public TreeNode root = null;
 
-    public int kthAncestors(TreeNode root, int val, int k) {
-	if (root == null || root.val == val)
-	    return -1;
-	NodeInfo ancesstor = new NodeInfo();
-	ancestors(root, val, k, ancesstor);
-
-	return ancesstor.val;
-    }
-
-    private class NodeInfo {
+    private class Ancestor {
 	int pos;
-	int val = -1;
+	TreeNode node = null;
     }
 
-    private boolean ancestors(TreeNode root, int val, int k, NodeInfo ancesstor) {
+    public TreeNode kthAncestors(TreeNode root, int val, int k) {
+	if (root == null)
+	    return null;
+
+	Ancestor ancestor = new Ancestor();
+	kthAncestors(root, val, k, ancestor);
+
+	return ancestor.node != null ? ancestor.node : null;
+    }
+
+    private boolean kthAncestors(TreeNode root, int val, int k, Ancestor ancestor) {
 
 	if (root == null)
 	    return false;
@@ -26,15 +27,16 @@ public class BTKthAncestors {
 	    return true;
 	}
 
-	if (ancestors(root.left, val, k, ancesstor) || ancestors(root.right, val, k, ancesstor)) {
-	    ancesstor.pos++;
-	    if (ancesstor.pos == k)
-		ancesstor.val = root.val;
-
+	if (kthAncestors(root.left, val, k, ancestor) || kthAncestors(root.right, val, k, ancestor)) {
+	    ancestor.pos++;
+	    if (ancestor.pos == k) {
+		ancestor.node = root;
+	    }
 	    return true;
 	}
 
 	return false;
+
     }
 
 }
