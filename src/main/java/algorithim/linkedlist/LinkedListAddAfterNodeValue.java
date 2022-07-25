@@ -1,17 +1,19 @@
 package algorithim.linkedlist;
 
+import algorithim.linkedlist.LinkedList.Node;
+
 public class LinkedListAddAfterNodeValue {
 
-    LinkedList head, tail;
+    LinkedList.Node head, tail;
 
     public void addAfterNodeValue(int i, int j) {
 
 	if (head == null)
 	    return;
 
-	LinkedList newNode = new LinkedList(j);
+	Node newNode = new LinkedList.Node(j);
 
-	LinkedList curr = head;
+	Node curr = head;
 
 	while (curr != null && curr.val != i)
 	    curr = curr.next;
@@ -19,7 +21,7 @@ public class LinkedListAddAfterNodeValue {
 	if (curr == null)
 	    return;
 
-	LinkedList temp = curr.next;
+	Node temp = curr.next;
 	curr.next = newNode;
 	newNode.next = temp;
 

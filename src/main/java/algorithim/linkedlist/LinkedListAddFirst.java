@@ -1,12 +1,14 @@
 package algorithim.linkedlist;
 
+import algorithim.linkedlist.LinkedList.Node;
+
 public class LinkedListAddFirst {
 
-    LinkedList head, tail;
+    LinkedList.Node head, tail;
 
     public void addFirst(int i) {
 
-	LinkedList node = new LinkedList(i);
+	Node node = new LinkedList.Node(i);
 	if (head == null)
 	    head = tail = node;
 	else {

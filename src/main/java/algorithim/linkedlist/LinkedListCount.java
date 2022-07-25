@@ -1,15 +1,17 @@
 package algorithim.linkedlist;
 
+import algorithim.linkedlist.LinkedList.Node;
+
 public class LinkedListCount {
 
-    LinkedList head, tail;
+    LinkedList.Node head, tail;
 
     public int count(int i) {
 
 	if (head == null)
 	    return 0;
 
-	LinkedList curr = head;
+	Node curr = head;
 
 	int count = 0;
 	while (curr != null) {

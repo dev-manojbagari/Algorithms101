@@ -1,15 +1,17 @@
 package algorithim.linkedlist;
 
+import algorithim.linkedlist.LinkedList.Node;
+
 public class LinkedListSearch {
 
-    LinkedList head, tail;
+    LinkedList.Node head, tail;
 
     public boolean find(int i) {
 
 	if (head == null)
 	    return false;
 
-	LinkedList curr = head;
+	Node curr = head;
 
 	while (curr != null && curr.val != i)
 	    curr = curr.next;

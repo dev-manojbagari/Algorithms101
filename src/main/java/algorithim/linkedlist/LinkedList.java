@@ -1,16 +1,17 @@
 package algorithim.linkedlist;
 
 public class LinkedList {
-    int val;
-    LinkedList next;
-    public LinkedList head, tail;
 
-    public LinkedList(int val) {
-	this.val = val;
-	next = null;
+    static class Node {
+	int val;
+	Node next;
+
+	public Node(int val) {
+	    this.val = val;
+	}
+
     }
 
-    public LinkedList() {
-    }
+    Node head, tail;
 
 }
