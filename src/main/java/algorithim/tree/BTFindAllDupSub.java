@@ -7,17 +7,17 @@ import java.util.List;
 public class BTFindAllDupSub {
     public TreeNode root = null;
 
-    public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
+    public List<Integer> findDuplicateSubtrees(TreeNode root) {
 
 	if (root == null)
 	    return null;
-	List<TreeNode> list = new ArrayList<>();
+	List<Integer> list = new ArrayList<>();
 	findDuplicateSubtrees(root, new HashMap<String, Integer>(), list);
 
 	return list;
     }
 
-    private String findDuplicateSubtrees(TreeNode root, HashMap<String, Integer> map, List<TreeNode> list) {
+    private String findDuplicateSubtrees(TreeNode root, HashMap<String, Integer> map, List<Integer> list) {
 
 	if (root == null) {
 	    return "#";
@@ -29,7 +29,7 @@ public class BTFindAllDupSub {
 	StringBuilder sb = new StringBuilder(leftST).append(",").append(rightST).append(",").append(root.val);
 	String curSubTree = sb.toString();
 	if (curSubTree.length() >= 5 && map.containsKey(curSubTree) && map.get(curSubTree) == 1)
-	    list.add(root);
+	    list.add(root.val);
 
 	map.put(curSubTree, map.getOrDefault(curSubTree, 0) + 1);
 
