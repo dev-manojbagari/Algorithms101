@@ -23,4 +23,17 @@ public class LLUtil {
 	return list.head;
     }
 
+    public static String convert(Node head) {
+
+	StringBuilder sb = new StringBuilder();
+
+	Node curr = head;
+	while (curr != null) {
+	    sb.append(curr.val + " ");
+	    curr = curr.next;
+	}
+
+	return sb.toString().trim();
+    }
+
 }
