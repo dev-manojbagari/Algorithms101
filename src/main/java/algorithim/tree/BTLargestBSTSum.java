@@ -14,7 +14,7 @@ public class BTLargestBSTSum {
 	if (root == null)
 	    return 0;
 
-	int[] maxSum = { 0 };
+	int[] maxSum = { Integer.MIN_VALUE };
 
 	maxSumBST(root, new Tree(), maxSum);
 
