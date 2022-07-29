@@ -1,6 +1,7 @@
 package algorithim.tree;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -28,6 +29,22 @@ public class IsBSTTest {
 	bst.root.right.right = new TreeNode(80);
 
 	assertTrue(bst.isBSTIterative(bst.root));
+    }
+
+    @Test
+    public void isBSTIterativeTest2() {
+
+	bst.root = BTUtil.convert("2,2,2");
+
+	assertFalse(bst.isBSTIterative(bst.root));
+    }
+
+    @Test
+    public void isBSTRecursiveTest2() {
+
+	bst.root = BTUtil.convert("2,2,2");
+
+	assertFalse(bst.isBSTIterative(bst.root));
     }
 
     @Test
