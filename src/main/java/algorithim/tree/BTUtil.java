@@ -1,8 +1,6 @@
 package algorithim.tree;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 public class BTUtil {
@@ -68,11 +66,12 @@ public class BTUtil {
 	return leetcodeConvert(str);
     }
 
-    public static List<Integer> toString(TreeNode root) {
+    public static String convert(TreeNode root) {
 
-	List<Integer> list = new ArrayList<>();
+	StringBuilder sb = new StringBuilder();
+
 	if (root == null)
-	    return list;
+	    return "";
 
 	Queue<TreeNode> q = new LinkedList<>();
 	q.add(root);
@@ -86,7 +85,7 @@ public class BTUtil {
 		TreeNode temp = q.poll();
 		levelSize--;
 
-		list.add(temp.val);
+		sb.append(temp.val).append(" ");
 
 		if (temp.left != null)
 		    q.add(temp.left);
@@ -98,7 +97,7 @@ public class BTUtil {
 
 	}
 
-	return list;
+	return sb.toString().trim();
     }
 
     public static String converToLeetCodeCompatible(String str) {
