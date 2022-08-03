@@ -7,59 +7,48 @@ public class LinkedListQuickSort {
     LinkedList.Node head, tail;
 
     public Node quickSort(Node head) {
+
 	if (head == null || head.next == null)
 	    return head;
 
-	Node tail = head;
-	while (tail.next != null)
-	    tail = tail.next;
+	quickSort(head, null);
 
-	quickSort(head, tail);
 	return head;
     }
 
-    private void quickSort(Node head, Node tail) {
+    private void quickSort(Node start, Node end) {
 
-	if (head == null || tail == null || tail == head || tail.next == head)
-	    return;
-
-	Node pivotPrev = pivot(head, tail);
-
-	if (pivotPrev != null)
-	    quickSort(head, pivotPrev);
-
-	if (pivotPrev != null && pivotPrev == head)
-	    quickSort(pivotPrev.next, tail);
-	else if (pivotPrev != null && pivotPrev.next != null && pivotPrev.next.next != null)
-	    quickSort(pivotPrev.next.next, tail);
-
-	return;
+	if (start != end) {
+	    Node pivot = partition(start, end);
+	    quickSort(start, pivot);
+	    quickSort(pivot.next, end);
+	}
     }
 
-    private Node pivot(Node head, Node tail) {
+    private Node partition(Node start, Node end) {
 
-	Node start = head;
-	int pivot = tail.val;
-	Node prev = head;
+	int pivot = start.val;
 
-	Node ptr = head;
+	Node curr = start;
+	Node ptr = start.next;
 
-	while (ptr != tail.next) {
+	while (ptr != end) {
 	    if (ptr.val < pivot) {
-		int temp = ptr.val;
-		ptr.val = start.val;
-		start.val = temp;
-		prev = start;
-		start = start.next;
+		curr = curr.next;
+		swapValue(curr, ptr);
 	    }
 	    ptr = ptr.next;
 	}
 
-	int temp = tail.val;
-	tail.val = start.val;
-	start.val = temp;
+	swapValue(start, curr);
 
-	return prev;
+	return curr;
+    }
+
+    private void swapValue(Node curr, Node ptr) {
+	int temp = curr.val;
+	curr.val = ptr.val;
+	ptr.val = temp;
     }
 
 }
