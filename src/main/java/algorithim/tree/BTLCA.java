@@ -4,33 +4,33 @@ public class BTLCA {
     public TreeNode root = null;
 
     public TreeNode lca(TreeNode root, int i, int j) {
+
 	if (root == null)
 	    return null;
 
-	TreeNode lcaNode = lcaRecur(root, i, j);
+	TreeNode LCA = lcaRec(root, i, j, null);
 
-	if (lcaNode != null) {
-	    if (lcaNode.val == i) {
-		return findNode(lcaNode, j) == true ? lcaNode : null;
-	    } else
-		return findNode(lcaNode, j) == true ? lcaNode : null;
-	}
+	if (LCA.val == i)
+	    return find(LCA, j) == true ? LCA : null;
+	else if (LCA.val == j)
+	    return find(LCA, i) == true ? LCA : null;
 
-	return lcaNode;
+	return LCA;
     }
 
-    private boolean findNode(TreeNode root, int j) {
+    private boolean find(TreeNode root, int i) {
 	if (root == null)
 	    return false;
-
-	if (root.val == j)
+	if (root.val == i)
 	    return true;
 
-	return findNode(root.left, j) || findNode(root.right, j);
-
+	return find(root.left, i) || find(root.right, i);
     }
 
-    private TreeNode lcaRecur(TreeNode root, int i, int j) {
+    private TreeNode lcaRec(TreeNode root, int i, int j, TreeNode LCA) {
+
+	if (LCA != null)
+	    return LCA;
 
 	if (root == null)
 	    return null;
@@ -38,11 +38,13 @@ public class BTLCA {
 	if (root.val == i || root.val == j)
 	    return root;
 
-	TreeNode l = lcaRecur(root.left, i, j);
-	TreeNode r = lcaRecur(root.right, i, j);
+	TreeNode l = lcaRec(root.left, i, j, LCA);
+	TreeNode r = lcaRec(root.right, i, j, LCA);
 
-	if (l != null && r != null)
+	if (l != null && r != null) {
+	    LCA = root;
 	    return root;
+	}
 
 	return l != null ? l : r;
     }
