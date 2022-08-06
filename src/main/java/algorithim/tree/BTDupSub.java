@@ -6,7 +6,11 @@ import java.util.Set;
 public class BTDupSub {
     public TreeNode root = null;
 
-    public boolean dupST(TreeNode root) {
+    private class Tree {
+	StringBuilder asString = new StringBuilder();
+    }
+
+    boolean dupSub(TreeNode root) {
 
 	if (root == null)
 	    return false;
@@ -16,40 +20,34 @@ public class BTDupSub {
 	return dupST(root, set, new Tree());
     }
 
-    private class Tree {
-	String asString;
-
-    }
-
     private boolean dupST(TreeNode root, Set<String> set, Tree tree) {
 
 	if (root == null) {
-	    tree.asString = "#";
+	    tree.asString.append(",#");
 	    return false;
 	}
 
 	Tree lst = new Tree();
 	Tree rst = new Tree();
 
-	boolean left = dupST(root.left, set, lst);
-	if (left)
-	    return true;
+	boolean l = dupST(root.left, set, lst);
+	if (l == true)
+	    return l;
+	boolean r = dupST(root.right, set, rst);
+	if (r == true)
+	    return r;
 
-	boolean right = dupST(root.right, set, rst);
-	if (right)
-	    return true;
+	tree.asString.append(lst.asString).append(rst.asString).append("," + root.val + ",");
 
-	StringBuilder sb = new StringBuilder(lst.asString).append(",").append(rst.asString).append(",")
-		.append(root.val);
-	tree.asString = sb.toString();
+	if (root.left != null || root.right != null) {
+	    if (tree.asString.toString().length() > 6 && set.contains(tree.asString.toString())) {
+		return true;
+	    }
+	}
 
-	if (tree.asString.length() > 3 && set.contains(tree.asString))
-	    return true;
+	set.add(tree.asString.toString());
 
-	set.add(tree.asString);
-
-	return left || right;
-
+	return false;
     }
 
 }
