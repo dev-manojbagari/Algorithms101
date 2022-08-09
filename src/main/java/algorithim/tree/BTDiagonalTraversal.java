@@ -1,38 +1,37 @@
 package algorithim.tree;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
 
 public class BTDiagonalTraversal {
     public TreeNode root = null;
 
     public List<List<Integer>> diagonaleTraversal(TreeNode root) {
+	if (root == null)
+	    return null;
 
-	Map<Integer, List<Integer>> map = new HashMap<>();
 	List<List<Integer>> list = new ArrayList<>();
-	diagonaleTraversal(root, map, 0);
 
-	for (Map.Entry<Integer, List<Integer>> entry : map.entrySet()) {
-	    List<Integer> val = entry.getValue();
-	    list.add(val);
-	}
+	diagonaleTraversal(root, list, 0);
+
 	return list;
     }
 
-    private void diagonaleTraversal(TreeNode root, Map<Integer, List<Integer>> map, int dl) {
+    private void diagonaleTraversal(TreeNode root, List<List<Integer>> list, int level) {
 
 	if (root == null)
 	    return;
 
-	List<Integer> list = map.getOrDefault(dl, new ArrayList<>());
-	list.add(root.val);
-	map.put(dl, list);
-	diagonaleTraversal(root.left, map, dl + 1);
-	diagonaleTraversal(root.right, map, dl);
+	if (list.size() == level) {
+	    list.add(new ArrayList<Integer>());
+	}
+
+	list.get(level).add(root.val);
+
+	diagonaleTraversal(root.left, list, level + 1);
+	diagonaleTraversal(root.right, list, level);
 
     }
 
