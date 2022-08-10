@@ -10,7 +10,7 @@ public class BTDupSub {
 	StringBuilder asString = new StringBuilder();
     }
 
-    boolean dupSub(TreeNode root) {
+    boolean dupST(TreeNode root) {
 
 	if (root == null)
 	    return false;
