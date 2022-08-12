@@ -26,7 +26,7 @@ public class LinkedListReverseInGroups {
 	while (feq > 0) {
 
 	    int count = 1;
-	    while (count != k) {
+	    while (tail != null && tail.next != null && count != k) {
 		Node temp = tail.next;
 		tail.next = tail.next.next;
 		temp.next = pre.next;
