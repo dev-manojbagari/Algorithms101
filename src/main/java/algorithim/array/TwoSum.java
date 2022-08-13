@@ -14,7 +14,7 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 */
 public class TwoSum {
 
-    public int[] toSum(int[] arr, int target) {
+    public int[] twoSum(int[] arr, int target) {
 
 	Map<Integer, Integer> map = new HashMap<>();
 
