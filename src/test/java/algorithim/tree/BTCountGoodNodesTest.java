@@ -19,7 +19,7 @@ public class BTCountGoodNodesTest {
     @Test
     public void test() {
 	bt.root = BTUtil.convert("3,1,4,3,null,1,5");
-	int count = bt.goodNodes2(bt.root);
+	int count = bt.goodNodes(bt.root);
 
 	assertEquals(4, count);
     }
