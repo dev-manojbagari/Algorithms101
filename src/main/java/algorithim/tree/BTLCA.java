@@ -48,5 +48,43 @@ public class BTLCA {
 
 	return l != null ? l : r;
     }
+    /*
+    class Solution {
+	    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+	        if(root == null) return null;
+	        
+	        if(isChildOf(p,q)) return q;
+	        if(isChildOf(q,p)) return p;
+	        
+	        Queue<TreeNode> queue = new LinkedList<>();
+	        queue.offer(root);
+	        TreeNode lca = null;
+	        
+	        while(!queue.isEmpty()){
+	            
+	            TreeNode node = queue.poll();
+	            lca = node;
+	            
+	            if(node == p || node == q)
+	                break;
+	            if(node.left != null && isChildOf(p,node.left) && isChildOf(q,node.left))
+	                queue.offer(node.left);
+	            if(node.right != null && isChildOf(p,node.right) && isChildOf(q,node.right))
+	                queue.offer(node.right);
+	            
+	        }
+	        
+	        return lca;
+	    }
+	    public boolean isChildOf(TreeNode child,TreeNode parent){
+	        if(parent == null)
+	            return false;
+	        if(parent == child)
+	            return true;
+	        // System.out.println(child.val+" "+parent.val);
+	        return isChildOf(child,parent.left) || isChildOf(child,parent.right);
+	    }
+	}
+	*/
 
 }
