@@ -37,7 +37,7 @@ public class BTDupSub {
 	if (r == true)
 	    return r;
 
-	tree.asString.append(lst.asString).append(rst.asString).append("," + root.val + ",");
+	tree.asString.append(lst.asString).append(rst.asString).append("," + root.val);
 
 	if (root.left != null || root.right != null) {
 	    if (tree.asString.toString().length() > 6 && set.contains(tree.asString.toString())) {

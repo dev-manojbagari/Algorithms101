@@ -21,7 +21,7 @@ public class BTAllNodesAtDistanceKTest {
     public void test() {
 
 	bt.root = BTUtil.convert("3 5 1 6 2 0 8 -1 -1 7 4 -1 -1 -1 -1 -1 -1 -1 -1");
-	List<Integer> list = bt.allNodesAtDistanceK(bt.root, bt.root.left, 2);
+	List<Integer> list = bt.distanceK(bt.root, bt.root.left, 2);
 
 	assertTrue(list.containsAll(Arrays.asList(1, 4, 7)));
 
@@ -31,7 +31,7 @@ public class BTAllNodesAtDistanceKTest {
     public void test2() {
 
 	bt.root = BTUtil.convert("1 2 3 4 5 -1 -1 6 -1 -1 -1 -1 -1");
-	List<Integer> list = bt.allNodesAtDistanceK(bt.root, bt.root.left.right, 3);
+	List<Integer> list = bt.distanceK(bt.root, bt.root.left.right, 3);
 
 	assertTrue(list.containsAll(Arrays.asList(3, 6)));
     }
@@ -48,7 +48,7 @@ public class BTAllNodesAtDistanceKTest {
 	bt.root.right.right = new TreeNode(6);
 
 	bt.root.right.right.left = new TreeNode(7);
-	List<Integer> list = bt.allNodesAtDistanceK(bt.root, bt.root.left, 2);
+	List<Integer> list = bt.distanceK(bt.root, bt.root.left, 2);
 
 	assertTrue(list.containsAll(Arrays.asList(3)));
 
