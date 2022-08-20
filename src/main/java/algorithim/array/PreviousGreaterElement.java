@@ -25,20 +25,26 @@ public class PreviousGreaterElement {
 	return previousGreater;
     }
 
-    public int[] nextGreaterElement(int[] arr) {
+    public int[] previousGreaterElement2(int[] arr) {
 
 	Stack<Integer> stack = new Stack<>();
 
-	int[] nextGreater = new int[arr.length];
-	Arrays.fill(nextGreater, -1);
+	int[] previousGreater = new int[arr.length];
+//	Arrays.fill(previousGreater, -1);
 
-	for (int i = 0; i < nextGreater.length; i++) {
-	    while (!stack.isEmpty() && arr[stack.peek()] < arr[i])
-		nextGreater[stack.pop()] = i;
+	for (int i = 0; i < previousGreater.length; i++) {
+	    while (!stack.isEmpty() && arr[stack.peek()] <= arr[i])
+		stack.pop();
+
+	    if (!stack.isEmpty())
+		previousGreater[i] = stack.peek();
+	    else
+		previousGreater[i] = -1;
+
 	    stack.push(i);
 	}
 
-	return nextGreater;
+	return previousGreater;
     }
 
 }
