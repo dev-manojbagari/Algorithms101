@@ -1,4 +1,4 @@
-package algorithim.array.monostack;
+package algorithim.array;
 
 import java.util.Arrays;
 
@@ -6,7 +6,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import algorithim.array.monostack.PreviousGreaterElement;
+import algorithim.array.PreviousGreaterElement;
 
 public class PreviousGreaterElementTest {
 

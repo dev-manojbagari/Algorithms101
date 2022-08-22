@@ -1,4 +1,4 @@
-package algorithim.array.monostack;
+package algorithim.array;
 
 import java.util.Arrays;
 import java.util.Stack;
