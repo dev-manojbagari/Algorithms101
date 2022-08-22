@@ -18,7 +18,7 @@ public class TrappingWaterTest {
     public void test() {
 	int[] arr = { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 };
 
-	assertEquals(6, array.trappingWater2(arr));
+	assertEquals(6, array.trappingWater(arr));
 
     }
 
@@ -26,7 +26,7 @@ public class TrappingWaterTest {
     public void test2() {
 	int[] arr = { 4, 2, 3 };
 
-	assertEquals(1, array.trappingWater2(arr));
+	assertEquals(1, array.trappingWater(arr));
 
     }
 

@@ -1,5 +1,7 @@
 package algorithim.array;
 
+import java.util.Stack;
+
 public class TrappingWater {
 
     public int trappingWater(int[] arr) {
@@ -44,6 +46,7 @@ public class TrappingWater {
 	return tw;
     }
 
+// 1ms
     public int trappingWater2(int[] arr) {
 
 	int n = arr.length;
@@ -74,4 +77,34 @@ public class TrappingWater {
 
 	return tw;
     }
+
+// 17ms
+    public int trappingWater3(int[] arr) {
+	int n = arr.length;
+	int tw = 0;
+
+	Stack<Integer> stack = new Stack<>();
+
+	for (int i = 0; i < arr.length; i++) {
+
+	    while (!stack.isEmpty() && arr[stack.peek()] <= arr[i]) {
+
+		int stackTop = stack.pop();
+
+		if (!stack.isEmpty()) {
+
+		    int h = Math.min(arr[stack.peek()], arr[i]) - arr[stackTop];
+		    int w = i - stack.peek() - 1;
+		    tw += h * w;
+
+		}
+
+	    }
+
+	    stack.push(i);
+	}
+
+	return tw;
+    }
+
 }
