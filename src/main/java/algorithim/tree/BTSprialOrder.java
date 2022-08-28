@@ -8,8 +8,8 @@ import java.util.Queue;
 public class BTSprialOrder {
     public TreeNode root = null;
 
-    public List<Integer> btSprialOrderIter(TreeNode root) {
-	List<Integer> list = new LinkedList<>();
+    public List<List<Integer>> btSprialOrderIter(TreeNode root) {
+	List<List<Integer>> list = new LinkedList<>();
 	if (root == null)
 	    return list;
 
@@ -25,7 +25,7 @@ public class BTSprialOrder {
 	    while (levelSize != 0) {
 		TreeNode temp = q.poll();
 		levelSize--;
-		if (level % 2 == 0)
+		if (level % 2 != 0)
 		    curLvlList.addFirst(temp.val);
 		else
 		    curLvlList.add(temp.val);
@@ -37,7 +37,7 @@ public class BTSprialOrder {
 		    q.add(temp.right);
 	    }
 
-	    list.addAll(curLvlList);
+	    list.add(curLvlList);
 	}
 
 	return list;
@@ -59,7 +59,7 @@ public class BTSprialOrder {
 	}
 
 	List<Integer> collection = sol.get(level);
-	if (level % 2 == 0)
+	if (level % 2 != 0)
 	    collection.add(0, curr.val);
 	else
 	    collection.add(curr.val);
