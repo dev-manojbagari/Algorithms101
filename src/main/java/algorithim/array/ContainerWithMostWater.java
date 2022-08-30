@@ -23,7 +23,7 @@ public class ContainerWithMostWater {
 		while (low < high && arr[low] <= temp)
 		    low++;
 	    } else if (arr[low] > arr[high]) {
-		int temp = arr[low];
+		int temp = arr[high];
 		while (low < high && arr[high] <= temp)
 		    high--;
 
