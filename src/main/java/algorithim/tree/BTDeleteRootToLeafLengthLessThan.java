@@ -6,19 +6,31 @@ public class BTDeleteRootToLeafLengthLessThan {
     public TreeNode root = null;
 
     TreeNode bstDeleteRootToLeadLengthLessThan(TreeNode root, int k) {
+	if (root == null)
+	    return root;
+
+	return bstDeleteRootToLeadLengthLessThan(root, k, 0);
+    }
+
+    private TreeNode bstDeleteRootToLeadLengthLessThan(TreeNode root, int k, int pathLen) {
 
 	if (root == null)
 	    return null;
 
-	root.left = bstDeleteRootToLeadLengthLessThan(root.left, k - 1);
-	root.right = bstDeleteRootToLeadLengthLessThan(root.right, k - 1);
-
 	if (root.left == null && root.right == null) {
-	    if (k > 1)
+	    if (pathLen + 1 < k)
 		return null;
+	    else
+		return root;
 	}
 
-	return root;
+	root.left = bstDeleteRootToLeadLengthLessThan(root.left, k, pathLen + 1);
+	root.right = bstDeleteRootToLeadLengthLessThan(root.right, k, pathLen + 1);
+
+	if (root.left == null && root.right == null)
+	    return null;
+	else
+	    return root;
     }
 
 }
