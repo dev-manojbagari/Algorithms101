@@ -5,20 +5,32 @@ package algorithim.tree;
 public class BTDeleteNodeRootToLeafSumLessThan {
     public TreeNode root = null;
 
-    public TreeNode bstDeleteNodeRootToLeadPathSumLessThan(TreeNode root, int sum) {
+    public void bstDeleteNodeRootToLeadPathSumLessThan(TreeNode root, int k) {
 
+	if (root == null)
+	    return;
+
+	bstDeleteNodeRootToLeadPathSumLessThan(root, 0, k);
+
+	return;
+
+    }
+
+    private TreeNode bstDeleteNodeRootToLeadPathSumLessThan(TreeNode root, int pathSum, int k) {
 	if (root == null)
 	    return null;
 
-	root.left = bstDeleteNodeRootToLeadPathSumLessThan(root.left, sum - root.val);
-	root.right = bstDeleteNodeRootToLeadPathSumLessThan(root.right, sum - root.val);
-
-	if (root.left == null && root.right == null) {
-
-	    if (sum - root.val > 0)
+	if (root.left == null && root.right == null)
+	    if (pathSum + root.val < k)
 		return null;
+	    else
+		return root;
 
-	}
+	root.left = bstDeleteNodeRootToLeadPathSumLessThan(root.left, pathSum + root.val, k);
+	root.right = bstDeleteNodeRootToLeadPathSumLessThan(root.right, pathSum + root.val, k);
+
+	if (root.left == null && root.right == null)
+	    return null;
 
 	return root;
 
