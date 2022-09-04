@@ -68,4 +68,14 @@ public class BTBoundaryTraversalTest {
 	assertEquals(list1, list2);
     }
 
+    @Test
+    public void test4() {
+	bt.root = new TreeNode(1);
+
+	List<Integer> list1 = Arrays.asList(1);
+	List<Integer> list2 = bt.boundaryTraversal(bt.root);
+
+	assertEquals(list1, list2);
+    }
+
 }

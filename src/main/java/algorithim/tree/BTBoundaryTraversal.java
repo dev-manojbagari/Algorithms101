@@ -13,7 +13,8 @@ public class BTBoundaryTraversal {
 
 	list.add(root.val);
 	leftBoundary(root.left, list);
-	leafNodes(root, list);
+	leafNodes(root.left, list);
+	leafNodes(root.right, list);
 	rightBoundary(root.right, list);
 
 	return list;
