@@ -1,101 +1,115 @@
 package algorithim.tree;
 
 public class BSTDelete {
-	public TreeNode root = null;
+    public TreeNode root = null;
 
-	public TreeNode deleteIterative(TreeNode root, int value) {
+    public TreeNode deleteIterative(TreeNode root, int k) {
 
-		if (root == null)
-			return null;
-
-		TreeNode curr = root;
-		TreeNode parent = null;
-
-		while (curr != null && curr.val != value) {
-			parent = curr;
-			if (curr.val < value) {
-				curr = curr.right;
-			} else {
-				curr = curr.left;
-			}
-
-		}
-
-		if (curr == null)
-			return root;
-
-		if (curr.left == null && curr.right == null) {
-
-			if (parent == null)
-				return null;
-
-			if (parent.left == curr)
-				parent.left = null;
-			else
-				parent.right = null;
-
-		} else if (curr.left != null && curr.right != null) {
-
-			int minRightTree = minRight(curr.right);
-
-			curr.val = minRightTree;
-
-			curr.right = deleteIterative(curr.right, minRightTree);
-
-		} else {
-
-			TreeNode child = curr.left != null ? curr.left : curr.right;
-
-			if (parent.left == curr)
-				parent.left = child;
-			else
-				parent.right = child;
-
-		}
-
-		return root;
+	if (root == null) {
+	    return null;
 	}
 
-	private int minRight(TreeNode node) {
+	TreeNode parent = null;
+	TreeNode curr = root;
 
-		while (node.left != null) {
-			node = node.left;
-		}
-
-		return node.val;
+	while (curr != null && curr.val != k) {
+	    parent = curr;
+	    if (curr.val > k) {
+		curr = curr.left;
+	    } else {
+		curr = curr.right;
+	    }
 	}
 
-	public TreeNode deleteRecursive(TreeNode root, int value) {
-		if (root == null)
-			return null;
-		else if (root.val < value)
-			root.right = deleteRecursive(root.right, value);
-		else if (root.val > value)
-			root.left = deleteRecursive(root.left, value);
-		else {
+	if (curr.left == null && curr.right == null) {
 
-			if (root.left == null && root.right == null) {
+	    if (parent == null) {
+		root = null;
+	    } else if (parent.left == curr) {
+		parent.left = null;
+	    } else {
+		parent.right = null;
+	    }
+	} else if (curr.left != null && curr.right != null) {
 
-				return null;
+	    int minRight = minRight(curr.right);
+	    curr.val = minRight;
 
-			} else if (root.left != null && root.right != null) {
+	    curr.right = deleteMinRight(curr.right);
 
-				int minRightTree = minRight(root.right);
+	} else {
 
-				root.val = minRightTree;
+	    TreeNode child = curr.left != null ? curr.left : curr.right;
+	    if (parent == null) {
+		root = child;
+	    }
 
-				root.right = deleteRecursive(root.right, minRightTree);
+	    else if (parent.left == curr) {
+		parent.left = child;
+	    } else {
+		parent.right = child;
+	    }
 
-			} else {
-
-				TreeNode child = root.left != null ? root.left : root.right;
-
-	            return child;
-			}
-
-		}
-
-		return root;
 	}
+
+	return root;
+    }
+
+    private int minRight(TreeNode node) {
+
+	while (node.left != null) {
+	    node = node.left;
+	}
+
+	return node.val;
+    }
+
+    private TreeNode deleteMinRight(TreeNode node) {
+	if (node.left == null)
+	    return node.right;
+	TreeNode parent = null;
+	TreeNode curr = node;
+
+	while (node.left != null) {
+	    parent = curr;
+	    curr = curr.left;
+	}
+	parent.left = curr.right;
+
+	return node;
+    }
+
+    public TreeNode deleteRecursive(TreeNode root, int value) {
+	if (root == null)
+	    return null;
+	else if (root.val < value)
+	    root.right = deleteRecursive(root.right, value);
+	else if (root.val > value)
+	    root.left = deleteRecursive(root.left, value);
+	else {
+
+	    if (root.left == null && root.right == null) {
+
+		return null;
+
+	    } else if (root.left != null && root.right != null) {
+
+		int minRightTree = minRight(root.right);
+
+		root.val = minRightTree;
+
+		root.right = deleteRecursive(root.right, minRightTree);
+
+	    } else {
+
+		TreeNode child = root.left != null ? root.left : root.right;
+
+		return child;
+	    }
+
+	}
+
+	return root;
+    }
 
 }
