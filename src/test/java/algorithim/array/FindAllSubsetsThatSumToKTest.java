@@ -20,22 +20,6 @@ public class FindAllSubsetsThatSumToKTest {
     }
 
     @Test
-    public void test() {
-	ArrayList<ArrayList<Integer>> listofList = FindAllSubsetsThatSumToK
-		.findSubsetsThatSumToK(new ArrayList<>(Arrays.asList(5, -2, 0, -5, 2)), 0);
-
-	List<Integer> list1 = Arrays.asList(2, 4, 6);
-	List<Integer> list2 = new LinkedList<>();
-
-	for (List<Integer> list : listofList) {
-	    list2.addAll(list);
-	}
-
-	assertTrue(list1.containsAll(list2));
-
-    }
-
-    @Test
     public void test2() {
 	ArrayList<ArrayList<Integer>> listofList = FindAllSubsetsThatSumToK
 		.findSubsetsThatSumToK(new ArrayList<>(Arrays.asList(2, 3, 5, 6, 8, 10)), 0);
