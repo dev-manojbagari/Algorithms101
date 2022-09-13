@@ -36,4 +36,33 @@ public class NQueensTest {
 
     }
 
+//    @Test
+//    public void test() {
+//	List<List<String>> expectead = Arrays.asList(Arrays.asList(".Q..", "...Q", "Q...", "..Q."),
+//		Arrays.asList("..Q.", "Q...", "...Q", ".Q.."));
+//	int n = array.solveNQueens(8);
+//
+//	assertEquals(2, n);
+//
+//    }
+//
+//    @Test
+//    public void test2() {
+//	List<List<String>> expectead = Arrays.asList(Arrays.asList("Q"));
+//	int n = array.solveNQueens(1);
+//
+//	assertEquals(1, n);
+//
+//    }
+//
+//    @Test
+//    public void test3() {
+//	List<List<String>> expectead = Arrays.asList(Arrays.asList(".Q..", "...Q", "Q...", "..Q."),
+//		Arrays.asList("..Q.", "Q...", "...Q", ".Q.."));
+//	int n = array.solveNQueens(8);
+//
+//	assertEquals(92, n);
+//
+//    }
+
 }
