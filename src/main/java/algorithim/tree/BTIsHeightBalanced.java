@@ -64,4 +64,27 @@ public class BTIsHeightBalanced {
 	return l && r;
     }
 
+    public boolean isBalanced3(TreeNode root) {
+
+	if (root == null)
+	    return true;
+
+	return helper(root) != -1;
+
+    }
+
+    private int helper(TreeNode root) {
+	if (root == null)
+	    return 0;
+
+	int lh = helper(root.left);
+	if (lh == -1)
+	    return -1;
+	int rh = helper(root.right);
+	if (lh == -1 || rh == -1 || Math.abs(lh - rh) > 1) {
+	    return -1;
+	}
+
+	return 1 + Math.max(lh, rh);
+    }
 }
