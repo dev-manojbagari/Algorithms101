@@ -45,4 +45,12 @@ public class BTIsChildSumTreeTest {
 
     }
 
+    @Test
+    public void test3() {
+	bt.root = BTUtil.convert("10 4 6 -1 -1 -1 -1");
+
+	assertTrue(bt.isChildSumTree(bt.root));
+
+    }
+
 }
