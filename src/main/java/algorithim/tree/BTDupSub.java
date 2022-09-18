@@ -40,7 +40,7 @@ public class BTDupSub {
 	tree.asString.append(lst.asString).append(rst.asString).append("," + root.val);
 
 	if (root.left != null || root.right != null) {
-	    if (tree.asString.toString().length() > 6 && set.contains(tree.asString.toString())) {
+	    if (set.contains(tree.asString.toString())) {
 		return true;
 	    }
 	}
