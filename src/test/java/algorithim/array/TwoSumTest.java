@@ -17,11 +17,11 @@ public class TwoSumTest {
 
     @Test
     public void test() {
-	int[] arr = { 2, 7, 11, 15 };
+	int[] arr = { 3, 2, 4 };
 
-	int[] indices = array.twoSum(arr, 9);
+	int[] indices = array.twoSum(arr, 6);
 
-	Assert.assertEquals(Arrays.toString(new int[] { 0, 1 }), Arrays.toString(indices));
+	Assert.assertEquals(Arrays.toString(new int[] { 1, 2 }), Arrays.toString(indices));
     }
 
 }
