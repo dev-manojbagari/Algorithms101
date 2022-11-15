@@ -61,4 +61,32 @@ public class LongestSubstringWithoutRepeatingCharacters {
 	return maxLen;
 
     }
+
+    public int nonRepeatingSubstring3(String str) {
+	if (str == null || str.length() == 0)
+	    return 0;
+	int map[] = new int[256];
+	int count = 0;
+	int maxLen = Integer.MIN_VALUE;
+	int start = 0;
+	for (int i = 0; i < str.length(); i++) {
+	    char c = str.charAt(i);
+	    map[c]++;
+	    if (map[c] == 2)
+		count++;
+
+	    while (count == 1 && start < i) {
+		c = str.charAt(start);
+		map[c]--;
+		if (map[c] == 1)
+		    count--;
+		start++;
+
+	    }
+
+	    maxLen = Math.max(maxLen, i - start + 1);
+	}
+
+	return maxLen;
+    }
 }
