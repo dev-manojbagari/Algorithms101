@@ -22,7 +22,7 @@ public class GroupAnagrams {
 
 	for (String str : strs) {
 	    char[] charArray = str.toCharArray();
-	    char[] c = new char[26];
+	    Arrays.sort(charArray);
 	    String key = new String(charArray);
 	    List<String> tempList = map.getOrDefault(key, new ArrayList<>());
 	    tempList.add(str);
