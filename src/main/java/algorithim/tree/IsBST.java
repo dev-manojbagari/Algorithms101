@@ -14,7 +14,7 @@ public class IsBST {
 
 	Stack<TreeNode> stack = new Stack<>();
 
-	while (curr != null || stack.isEmpty()) {
+	while (curr != null || !stack.isEmpty()) {
 
 	    while (curr != null) {
 		stack.push(curr);

@@ -26,6 +26,7 @@ public class IsBSTTest {
 
 	bst.root.right = new TreeNode(70);
 	bst.root.right.left = new TreeNode(60);
+	bst.root.right.left = new TreeNode(60);
 	bst.root.right.right = new TreeNode(80);
 
 	assertTrue(bst.isBSTIterative(bst.root));
@@ -44,7 +45,7 @@ public class IsBSTTest {
 
 	bst.root = BTUtil.convert("2,2,2");
 
-	assertFalse(bst.isBSTIterative(bst.root));
+	assertFalse(bst.isBSTRecursive(bst.root));
     }
 
     @Test
